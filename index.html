@@ -15,299 +15,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary-color: #6c63ff;
-      --secondary-color: #f5f2fe;
-      --text-color: #333;
-      --bg-color: #f8f9fa;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000000;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    .navbar {
-      background-color: #111;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-brand img {
-      width: 150px;
-      transition: transform 0.3s ease;
-    }
-
-    .navbar-brand img:hover {
-      transform: scale(1.1);
-    }
-
-    .nav-link {
-      color: white;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--primary-color);
-    }
-
-    #btn1 {
-      border: 2px solid var(--primary-color);
-      background-color: transparent;
-      border-radius: 20px;
-      padding: 10px 20px;
-      color: var(--primary-color);
-      transition: all 0.3s ease;
-    }
-
-    #btn1:hover {
-      background-color: var(--primary-color);
-      color: white;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: white;
-    }
-
-    .profile-img {
-      width: 100%;
-      max-width: 300px;
-      border: 5px solid var(--primary-color);
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
-
-    .skill-card {
-      background-color: #111;
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 10px #00000080;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .skill-icon {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    .project-card {
-      background-color: #111;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-      height: 100%;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-    }
-
-    .nike-project .carousel-item img {
-      height: 600px;
-      object-fit: contain;
-    }
-
-    .other-projects .project-card .card-img-top,
-    .other-projects .project-card video {
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 5%;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: var(--primary-color);
-      border-radius: 50%;
-    }
-
-    .certificate-slider-wrapper {
-      width: 100vw;
-      overflow: hidden;
-    }
-
-    .certificate-slider {
-      width: fit-content;
-      animation: scrollLeft 20s linear infinite;
-    }
-
-    .certificate-slider:hover {
-      animation-play-state: paused;
-    }
-
-    .cert-img {
-      height: 220px;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      margin-right: 1.5rem;
-    }
-
-    .cert-img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
-    }
-
-    @keyframes scrollLeft {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .contact-form .form-control {
-      background-color: #222;
-      border: 1px solid #444;
-      color: white;
-    }
-
-    .contact-form .form-control:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
-    }
-
-    .social-icons a {
-      color: white;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: var(--primary-color);
-    }
-
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* Home Section Animation */
-    #home {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #000;
-    }
-
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    #home p,
-    #home h1 {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Mobile Navigation Animation */
-    .navbar-collapse {
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .navbar-collapse.collapsing {
-      transform: translateY(-100%);
-    }
-
-    .navbar-collapse.show {
-      transform: translateY(0);
-    }
-
-    @media (max-width: 991px) {
-      .navbar-collapse {
-        background-color: #111;
-        padding: 1rem;
-      }
-
-      .nike-project .carousel-item img {
-        height: 300px;
-      }
-
-      .other-projects .project-card .card-img-top,
-      .other-projects .project-card video {
-        height: 150px;
-      }
-    }
-
-    /* See More Button */
-    .see-more-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      border: 2px solid var(--primary-color);
-      border-radius: 20px;
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .see-more-btn:hover {
-      background-color: var(--primary-color);
-      color: white;
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-4">
-    <a class="navbar-brand" href="#home">
-      <img src="M-removebg-preview.png" alt="Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item">
-          <a href="Maharshi Patel Resume.pdf" download id="btn1" class="ms-2">Download Resume</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">
+        <img src="M-removebg-preview.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a href="Maharshi Patel Resume.pdf" download id="btn1" class="ms-2">Download Resume</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- Main -->
-  <main class="pt-5 mt-5 container">
+  <main>
     <!-- Home Section -->
     <section id="home" data-aos="fade-up">
       <div id="particles-js"></div>
@@ -317,20 +56,22 @@
 
     <!-- About Section -->
     <section id="about" class="my-5" data-aos="fade-right">
-      <div class="row align-items-center">
-        <div class="col-md-4 text-center mb-4 mb-md-0">
-          <img src="DSC_5024.JPG" alt="profile" class="profile-img img-fluid" loading="lazy">
-        </div>
-        <div class="col-md-8">
-          <h2 class="section-title">About Me</h2>
-          <p>
-            Hi, I'm Maharshi Patel, a passionate Computer Science Engineering student focused on Full Stack Development.
-            I enjoy bringing ideas to life by building responsive, dynamic web applications from end to end. My
-            technical toolkit includes HTML, CSS, JavaScript, and React for front-end development, along with Node.js,
-            Express, and MongoDB on the back end. I regularly use Git and GitHub for version control and deploy my
-            projects using platforms like Vercel and Netlify. I'm always eager to explore new technologies, work on
-            real-world projects, and grow through meaningful collaboration.
-          </p>
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="DSC_5024.JPG" alt="profile" class="profile-img img-fluid" loading="lazy">
+          </div>
+          <div class="col-md-8">
+            <h2 class="section-title">About Me</h2>
+            <p>
+              Hi, I'm Maharshi Patel, a passionate Computer Science Engineering student focused on Full Stack Development.
+              I enjoy bringing ideas to life by building responsive, dynamic web applications from end to end. My
+              technical toolkit includes HTML, CSS, JavaScript, and React for front-end development, along with Node.js,
+              Express, and MongoDB on the back end. I regularly use Git and GitHub for version control and deploy my
+              projects using platforms like Vercel and Netlify. I'm always eager to explore new technologies, work on
+              real-world projects, and grow through meaningful collaboration.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -339,7 +80,7 @@
     <section id="skills" class="my-5 text-center" data-aos="fade-up">
       <h2 class="section-title">Skills</h2>
       <p class="mb-5">The skills, tools, and technologies I am good at:</p>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row g-4 justify-content-center">
           <div class="col-6 col-md-3" data-aos="zoom-in">
             <div class="skill-card">
@@ -442,9 +183,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5" style="background-color: #0a0a0a;" data-aos="fade-up">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">🚀 Featured Projects</h2>
+    <section id="projects" class="py-5" data-aos="fade-up">
+      <div class="container-fluid">
+        <h2 class="section-title mb-5">🚀 Featured Projects</h2>
         <!-- Nike Project -->
         <div class="nike-project mb-5" data-aos="fade-up">
           <div class="project-card">
@@ -564,9 +305,9 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-5" style="background-color: #0a0a0a;" data-aos="fade-up">
-      <div class="container-fluid px-0">
-        <h2 class="section-title text-center mb-4">🎓 Certificates</h2>
+    <section id="certificates" class="py-5" data-aos="fade-up">
+      <div class="container-fluid">
+        <h2 class="section-title mb-4">🎓 Certificates</h2>
         <div class="certificate-slider-wrapper position-relative w-100 overflow-hidden">
           <div class="certificate-slider d-flex gap-4 py-3 w-100">
             <div class="certificate-track d-flex">
@@ -596,9 +337,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5" style="background-color: #0a0a0a; color: white;" data-aos="fade-up">
-      <div class="container">
-        <h2 class="section-title text-center mb-4">📬 Contact</h2>
+    <section id="contact" class="py-5" data-aos="fade-up">
+      <div class="container-fluid">
+        <h2 class="section-title mb-4">📬 Contact</h2>
         <p class="text-center mb-5">What’s next? Feel free to reach out to me...</p>
         <div class="row g-4">
           <div class="col-md-6" data-aos="fade-right">
@@ -619,36 +360,35 @@
             </div>
           </div>
           <div class="col-md-6" data-aos="fade-left">
-            <form class="contact-form" action="https://formspree.io/f/xdkzbdvn" method="POST">
-  <div class="mb-3">
-    <label class="form-label">Name*</label>
-    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Email address*</label>
-    <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Contact Number*</label>
-    <input type="tel" name="contact" class="form-control" placeholder="+91 1234567890" required>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Subject*</label>
-    <select name="subject" class="form-select" required>
-      <option value="">-- Choose the subject --</option>
-      <option value="Portfolio Inquiry">Portfolio Inquiry</option>
-      <option value="Collaboration">Collaboration</option>
-      <option value="Feedback">Feedback</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Message*</label>
-    <textarea name="message" class="form-control" rows="4" placeholder="What's inside your mind?" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit form</button>
-</form>
-
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/xdkzbdvn" method="POST">
+              <div class="mb-3">
+                <label class="form-label">Name*</label>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email address*</label>
+                <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Contact Number*</label>
+                <input type="tel" name="contact" class="form-control" placeholder="+91 1234567890" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Subject*</label>
+                <select name="subject" class="form-select" required>
+                  <option value="">-- Choose the subject --</option>
+                  <option value="Portfolio Inquiry">Portfolio Inquiry</option>
+                  <option value="Collaboration">Collaboration</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Message*</label>
+                <textarea name="message" class="form-control" rows="4" placeholder="What's inside your mind?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit form</button>
+            </form>
           </div>
         </div>
       </div>
@@ -666,56 +406,8 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Particles.js configuration
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#6c63ff' },
-        shape: { type: 'circle', stroke: { width: 0, color: '#000000' } },
-        opacity: { value: 0.5, random: false },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: '#6c63ff', opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
-      },
-      retina_detect: true
-    });
-    const form = document.getElementById('contact-form');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const jsonData = {};
-    formData.forEach((value, key) => {
-      jsonData[key] = value;
-    });
-
-    const response = await fetch('https://formspree.io/f/xdkzbdvn', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(jsonData)
-    });
-
-    if (response.ok) {
-      alert('Message sent successfully!');
-      form.reset();
-    } else {
-      alert('Error submitting the form.');
-    }
-  });
-  </script>
+  <!-- Custom JS -->
+  <script src="scripts.js"></script>
 </body>
 
 </html>
